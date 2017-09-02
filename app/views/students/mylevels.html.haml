@@ -1,0 +1,30 @@
+%h1 Levels details
+%h2 Current Level details:
+%table.table
+  %thead
+    %tr
+      %th Level Title
+      %th Days of week
+      %th
+      %th
+  %tbody
+    %tr
+      %td= @current_student_level.title
+      %td= @current_student_level.days_of_week
+      %td= link_to "View more Details", level_path(@current_student_level.id)
+%br
+%h2 Levels which you have completed so far:
+- if @studentlevels.size > 0
+  %table.table
+    %thead
+      %tr
+        %th Level Title
+        %th
+        %th
+    %tbody
+      - @studentlevels.each do |s|
+        %tr
+          %td= s.title
+          %td= link_to "View More Details", level_path(s.id)
+%br
+= link_to "Back", students_path

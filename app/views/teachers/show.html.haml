@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @teacher.first_name
+%p
+  %b Last name:
+  = @teacher.last_name
+%p
+  %b Gender:
+  = @teacher.gender
+%p
+  %b Date of birth:
+  = @teacher.date_of_birth
+%p
+  %b Mobile number:
+  = @teacher.mobile_number
+%p
+  %b Email:
+  = @teacher.email
+%p
+  %b Listening skills jaws:
+  = @teacher.listening_skills_jaws
+%p
+  %b Writing skills with jaws:
+  = @teacher.writing_skills_with_jaws
+%p
+  %b Strengths:
+  = raw @teacher.strengths
+%p
+  %b Weaknesses:
+  = raw @teacher.weaknesses
+- if current_user.role == 'admin'
+  = link_to 'Edit', edit_teacher_path(@teacher)
+\|
+= link_to 'Back', teachers_path

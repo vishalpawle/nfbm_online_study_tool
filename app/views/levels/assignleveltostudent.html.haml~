@@ -1,0 +1,6 @@
+%h2 Assign Students to this level:
+%strong Level title is, 
+%strong= @level.title
+%br
+- @studentl.each do |s|
+  = s.first_name

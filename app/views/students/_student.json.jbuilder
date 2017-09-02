@@ -1,0 +1,2 @@
+json.extract! student, :id, :first_name, :last_name, :mid_name, :gender, :date_of_birth, :mobile_number, :email, :address_one, :address_two, :address_three, :city, :state, :pin, :occupation, :qualification, :have_you_completed_any_computer_cource, :course_name, :computer_literacy_level, :percentages_of_blindness, :which_assistive_technology_do_you_use, :do_you_have_membership_of_nfbmpune, :tirms, :user_id, :created_at, :updated_at
+json.url student_url(student, format: :json)

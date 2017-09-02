@@ -1,0 +1,12 @@
+= simple_form_for(@level) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :start_date, as: :string, input_html:  {type: :date, order:  [:day, :month, :year], "aria-required" => "true"}
+    = f.input :end_date, as: :string, input_html:  {type: :date, order:  [:day, :month, :year], "aria-required" => "true"}
+    = f.input :days_of_week, :collection => ['Munday to Friday', 'Only saturday sunday and public holidays', 'From Monday to Sunday', 'Monday to Saturday', 'Monday, Wednesday, Friday', 'Tuesday, Thursday, Saturday', 'As per requirement'], :prompt => "Please select valid selection"
+    = f.input :level_remarks
+
+  .form-actions
+    = f.button :submit

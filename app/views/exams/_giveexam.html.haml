@@ -1,0 +1,18 @@
+- @hold_array = []
+- @paper.last.questions.each do |q|
+  - @hold_array.push(q.id)
+- @questions_count = @hold_array.size
+= simple_form_for giveexam_path, method: :post do |f|
+  %i total marks of this exams are: #{@questions_count}
+  = hidden_field_tag 'student_id', current_user.student.id
+  - @paper.last.questions.each do |q|
+    - if q.type_of_question == 'MCQ'
+      %p= raw q.assking_question
+    - else
+      %h3= raw q.assking_question
+    - q.options.each do |o|
+      %div
+        = radio_button_tag q.id, o.id
+      = o.option_name
+  .form-action
+    = submit_tag "Submit Exam", :data => { :confirm => 'Do you wish to Submit the Exam?' }

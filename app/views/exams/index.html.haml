@@ -1,0 +1,27 @@
+%h1 Exams created under #{@level.title}
+
+%table.table
+  %thead
+    %tr
+      %th Exam name
+      %th Exam date
+      %th Level title
+      %th
+      %th
+      %th
+
+  %tbody
+    - @exams.each do |exam|
+      %tr
+        %td= exam.exam_name
+        %td= exam.exam_date.strftime("%A, %B %d, %Y")
+        %td= exam.level.title
+        %td= link_to "Set paper for this exam", setpaper_path(exam)
+        %td= link_to "Paper Settings", setting_path(exam)
+        %td= link_to "Give exam", examinstruction_path(exam)
+        %td= link_to 'Show', exam
+        %td= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Exam', new_level_exam_path(@level.id)

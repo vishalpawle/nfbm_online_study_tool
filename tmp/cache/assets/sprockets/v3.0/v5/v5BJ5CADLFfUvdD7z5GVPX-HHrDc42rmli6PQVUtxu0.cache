@@ -1,0 +1,7 @@
+I"~(function() {
+  $(document).ready(function() {
+    return $("#vishal_question").attr('disabled', true);
+  });
+
+}).call(this);
+:ET

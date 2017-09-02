@@ -1,0 +1,94 @@
+- model_class = Student
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:first_name) + ':'
+  %br
+  = @student.first_name
+%p
+  %strong= model_class.human_attribute_name(:last_name) + ':'
+  %br
+  = @student.last_name
+%p
+  %strong= model_class.human_attribute_name(:mid_name) + ':'
+  %br
+  = @student.mid_name
+%p
+  %strong= model_class.human_attribute_name(:gender) + ':'
+  %br
+  = @student.gender
+%p
+  %strong= model_class.human_attribute_name(:date_of_birth) + ':'
+  %br
+  = @student.date_of_birth
+%p
+  %strong= model_class.human_attribute_name(:mobile_number) + ':'
+  %br
+  = @student.mobile_number
+%p
+  %strong= model_class.human_attribute_name(:email) + ':'
+  %br
+  = @student.email
+%p
+  %strong= model_class.human_attribute_name(:address_one) + ':'
+  %br
+  = @student.address_one
+%p
+  %strong= model_class.human_attribute_name(:address_two) + ':'
+  %br
+  = @student.address_two
+%p
+  %strong= model_class.human_attribute_name(:address_three) + ':'
+  %br
+  = @student.address_three
+%p
+  %strong= model_class.human_attribute_name(:city) + ':'
+  %br
+  = @student.city
+%p
+  %strong= model_class.human_attribute_name(:state) + ':'
+  %br
+  = @student.state
+%p
+  %strong= model_class.human_attribute_name(:pin) + ':'
+  %br
+  = @student.pin
+%p
+  %strong= model_class.human_attribute_name(:occupation) + ':'
+  %br
+  = @student.occupation
+%p
+  %strong= model_class.human_attribute_name(:qualification) + ':'
+  %br
+  = @student.qualification
+%p
+  %strong= model_class.human_attribute_name(:have_you_completed_any_computer_cource) + ':'
+  %br
+  = @student.have_you_completed_any_computer_cource
+%p
+  %strong= model_class.human_attribute_name(:course_name) + ':'
+  %br
+  = @student.course_name
+%p
+  %strong= model_class.human_attribute_name(:computer_literacy_level) + ':'
+  %br
+  = @student.computer_literacy_level
+%p
+  %strong= model_class.human_attribute_name(:percentages_of_blindness) + ':'
+  %br
+  = @student.percentages_of_blindness
+%p
+  %strong= model_class.human_attribute_name(:which_assistive_technology_do_you_use) + ':'
+  %br
+  = @student.which_assistive_technology_do_you_use
+%p
+  %strong= model_class.human_attribute_name(:do_you_have_membership_of_nfbmpune) + ':'
+  %br
+  = @student.do_you_have_membership_of_nfbmpune
+
+
+= link_to t('.back', :default => t("helpers.links.back")), students_path, :class => 'btn btn-default'
+- if current_user.role == 'admin'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_student_path(@student), :class => 'btn btn-default'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), student_path(@student), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

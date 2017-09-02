@@ -1,0 +1,15 @@
+%h1 Assign levels to the #{@teacher.first_name} #{@teacher_last_name}
+- if @assign_var.size >0
+  = simple_form_for assignleveltoteacher_path, method: :post do |f|
+    %table.table
+      %thead
+        %tr
+          %th Select Level
+          %th Level Title
+      %tbody
+        - @assign_var.each do |level|
+          %tr
+            %td= check_box_tag "levels[]", level.id
+            %td= level.title
+    = submit_tag "Assign Levels"
+    = link_to "Back", teachers_path

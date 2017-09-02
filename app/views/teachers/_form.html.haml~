@@ -1,0 +1,19 @@
+= simple_form_for(@teacher) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :gender, :collection => ['Male', 'Female', 'Other'], as: :radio_buttons
+    = f.input :date_of_birth, as: :string, input_html:  {type: :date, order:  [:day, :month, :year], "aria-required" => "true"}
+    = f.input :mobile_number
+    = f.input :email, :input_html => {:value => current_user.email}, :readonly => true
+    = f.input :listening_skills_jaws, :collection => ['Poor', 'Avrage', 'Good', 'Agreeable / Fine'], :prompt => "Please tell us about your listening skills with screen reading software JAWS"
+    = f.input :writing_skills_with_jaws, :collection => ['Poor', 'Avrage', 'Good', 'Agreeable / Fine'], :prompt => "Please tell us about your writing skills with screen reading software JAWS"
+    = f.input :strengths, :label => "Please write down your 3-4 strengths"
+    = f.input :weaknesses, :label => "Please write down your 3-4 weaknesses points"
+    = f.input :tirms, :label => " I know all tirms and conditions before using this tool, and  I do agree for the same"
+    = f.hidden_field :user_id, :value => current_user.id
+
+  .form-actions
+    = f.button :submit

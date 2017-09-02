@@ -1,0 +1,36 @@
+%h1 Listing levels
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Start date
+      %th End date
+      %th Days of week
+      %th
+      %th
+      %th
+      %th
+      %th
+
+
+  %tbody
+    - @levels.each do |level|
+      %tr
+        %td= level.title
+        %td= level.start_date.strftime("%A, %B %d, %Y")
+        %td= level.end_date.strftime("%A, %B %d, %Y")
+        %td= level.days_of_week
+        %td= link_to 'Show', level
+        %td= link_to "Create subjects for this level", new_level_subject_path(level)
+        %td= link_to "View subjects of this level", level_subjects_path(level) if level.subjects.size > 0
+        %td= link_to "Create exam for this level", new_level_exam_path(level)
+        %td= link_to "View exams and their details of this level", level_exams_path(level) if level.exams.size > 0
+        %td= link_to "Assign students to this level", assignleveltostudent_path(level)
+        %td= link_to "View Students of this level", viewstudents_path(level)
+        %td= link_to 'Edit', edit_level_path(level)
+        %td= link_to 'Destroy', level, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Level', new_level_path

@@ -1,0 +1,14 @@
+%h1 Levels belonging to #{@teacher.first_name} #{@teacher.last_name} as per:
+- if @teacher_read.size > 0
+  %table.table
+    %thead
+      %tr
+        %th Level Title
+        %th Days of week
+    %tbody
+      - @teacher_read.each do |level|
+        %tr
+          %td= link_to level.title, level_path(level.id)
+          %td= link_to level.days_of_week, level_path(level.id)
+%br
+= link_to "Back", teachers_path

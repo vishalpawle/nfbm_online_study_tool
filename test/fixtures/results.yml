@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  get_marks: 1
+  total_marks: 1
+  result_status: MyString
+  min_marks: 1
+  attempt_id: 
+  student_id: 
+
+two:
+  get_marks: 1
+  total_marks: 1
+  result_status: MyString
+  min_marks: 1
+  attempt_id: 
+  student_id: 

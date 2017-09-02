@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  mid_name: MyString
+  gender: MyString
+  date_of_birth: 2017-08-14
+  mobile_number: MyString
+  email: MyString
+  address_one: MyString
+  address_two: MyString
+  address_three: MyString
+  city: MyString
+  state: MyString
+  pin: 1
+  occupation: MyString
+  qualification: MyString
+  have_you_completed_any_computer_cource: MyString
+  course_name: MyString
+  computer_literacy_level: MyString
+  percentages_of_blindness: MyString
+  which_assistive_technology_do_you_use: MyString
+  do_you_have_membership_of_nfbmpune: MyString
+  tirms: false
+  user_id: 
+
+two:
+  first_name: MyString
+  last_name: MyString
+  mid_name: MyString
+  gender: MyString
+  date_of_birth: 2017-08-14
+  mobile_number: MyString
+  email: MyString
+  address_one: MyString
+  address_two: MyString
+  address_three: MyString
+  city: MyString
+  state: MyString
+  pin: 1
+  occupation: MyString
+  qualification: MyString
+  have_you_completed_any_computer_cource: MyString
+  course_name: MyString
+  computer_literacy_level: MyString
+  percentages_of_blindness: MyString
+  which_assistive_technology_do_you_use: MyString
+  do_you_have_membership_of_nfbmpune: MyString
+  tirms: false
+  user_id: 

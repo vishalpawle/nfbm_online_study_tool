@@ -1,0 +1,17 @@
+%h2 Assign Students for the #{@level.title}
+- if @studentl.size > 0
+  = simple_form_for assignleveltostudent_path, method: :post do |f|
+    %table.table
+      %thead
+        %tr
+          %th Select Student
+          %th Student Name
+      %tbody
+        - @studentl.each do |student|
+          %tr
+            %td= check_box_tag "students[]", student.id
+            %td= student.first_name.capitalize + " " + student.last_name.capitalize
+
+    = submit_tag "Assign student"
+    \|
+    = link_to "Back", levels_path

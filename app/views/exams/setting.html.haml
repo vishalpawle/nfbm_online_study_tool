@@ -1,0 +1,6 @@
+%h1 Select attempted papers of this exam:
+= simple_form_for setting_path, method: :put do |f|
+  - @paper.each do |p|
+    = check_box_tag "papers[]", p.id
+    = p.paper_name
+  = submit_tag "Next"

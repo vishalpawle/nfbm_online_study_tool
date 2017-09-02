@@ -1,0 +1,16 @@
+%h1 Student details of #{@level.title}
+- if @viewstudents.size > 0
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Mobile number
+        %th Email
+    %tbody
+      - @viewstudents.each do |student|
+        %tr
+          %td= student.first_name.capitalize + " " + student.last_name.capitalize
+          %td= student.mobile_number
+          %td= link_to student.email, student_path(student.id)
+%br
+= link_to "Back", levels_path

@@ -1,0 +1,19 @@
+I"Ô(function() {
+  $(document).ready(function() {
+    var exam_entrance, exam_final;
+    exam_entrance = $('#exam_type_of_exam_entrance_exam');
+    exam_final = $('#exam_type_of_exam_final_exam_for_this_level');
+    exam_entrance.change(function() {
+      if (exam_entrance.is(':checked')) {
+        return alert("If you select this category of the exam, and student could pass this exam, then he / she will be entitle for level pramotion");
+      }
+    });
+    return exam_final.change(function() {
+      if (exam_final.is(':checked')) {
+        return alert("If you select this category of the exam, and student could pass this exam, then he / she will be entitle for level pramotion");
+      }
+    });
+  });
+
+}).call(this);
+:ET

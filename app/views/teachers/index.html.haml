@@ -1,0 +1,49 @@
+%h1 Teachers details
+
+%table
+  %thead
+    %tr
+      %th First name
+      %th Last name
+      %th Gender
+      %th Date of birth
+      %th Mobile number
+      %th Email
+      %th Listening skills jaws
+      %th Writing skills with jaws
+      %th
+      %th
+      %th
+
+  %tbody
+    - if current_user.role == 'admin'
+      - @teachers.each do |teacher|
+        %tr
+          %td= teacher.first_name
+          %td= teacher.last_name
+          %td= teacher.gender
+          %td= teacher.date_of_birth.strftime("%A, %B %d, %Y")
+          %td= teacher.mobile_number
+          %td= teacher.email
+          %td= teacher.listening_skills_jaws
+          %td= teacher.writing_skills_with_jaws
+          %td= link_to "Assign levels to this teacher", assignleveltoteacher_path(teacher)
+          %td= link_to 'Show', teacher
+          %td= link_to 'Edit', edit_teacher_path(teacher)
+          %td= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' }
+    - else
+      %tr
+        %td= @teacher.first_name
+        %td= @teacher.last_name
+        %td= @teacher.gender
+        %td= @teacher.date_of_birth.strftime("%A, %B %d, %Y")
+        %td= @teacher.mobile_number
+        %td= @teacher.email
+        %td= @teacher.listening_skills_jaws
+        %td= @teacher.writing_skills_with_jaws
+        %td= link_to "View My Levels", readmylevel_path(@teacher)
+        %td= link_to 'Show', @teacher
+
+%br
+
+

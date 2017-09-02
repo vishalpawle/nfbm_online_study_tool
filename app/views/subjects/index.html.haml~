@@ -1,0 +1,25 @@
+%h1 Subjects for #{@level.title}
+
+%table
+  %thead
+    %tr
+      %th Subject name
+      %th Subject discription
+      %th Level
+      %th
+      %th
+      %th
+
+  %tbody
+    - @subjects.each do |subject|
+      %tr
+        %td= subject.subject_name
+        %td= subject.subject_discription
+        %td= subject.level.title
+        %td= link_to 'Show', subject
+        %td= link_to "Create questions for this subject", new_subject_question_path(subject)
+        %td= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Subject', new_level_subject_path(@level.id)

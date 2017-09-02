@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @level.title
+%p
+  %b Start date:
+  = @level.start_date.strftime("%A, %B %d, %Y")
+%p
+  %b End date:
+  = @level.end_date.strftime("%A, %B %d, %Y")
+%p
+  %b Days of week
+  = @level.days_of_week
+%p
+  %b Level remarks:
+  = @level.level_remarks
+- if current_user.role == 'admin' || current_user.role == 'teacher'
+  = link_to 'Edit', edit_level_path(@level)
+  \|
+- if current_user.role == 'student'
+  = link_to "Back", students_path
+- else
+  = link_to 'Back', levels_path

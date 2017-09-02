@@ -1,0 +1,22 @@
+- if @level.subjects.size >= 2
+  = javascript_include_tag Ckeditor.cdn_url
+  = simple_form_for([@level, @exam]) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :exam_name
+      = f.input :exam_date, as: :string, input_html:  {type: :date, order:  [:day, :month, :year], "aria-required" => "true"}
+      = f.input :exam_discription, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini'}}
+      = f.input :exam_instructions, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini'}}
+      %h2 Select Subjects for this exam
+      - @level.subjects.each do |s|
+        = check_box_tag "subjects[]", s.id
+        = s.subject_name
+    .form-actions
+      = submit_tag "Save Settings"
+- else
+  %p
+    %strong You cannot create exam for #{@level.title}
+    %br
+    %strong Reason:
+    %br
+    %strong You must create at least 2 or > 2 subjects for this level. (Error from Vishal Pawle).

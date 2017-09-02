@@ -1,0 +1,10 @@
+= javascript_include_tag Ckeditor.cdn_url
+= simple_form_for(@chapter) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :chapter_name
+    = f.input :chapter_discription, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini'}}
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,23 @@
+%h1 All chapters of #{@subject.title}
+
+%table.table
+  %thead
+    %tr
+      %th Chapter name
+      %th Subject of this chapter is:
+      %th
+      %th
+      %th
+
+  %tbody
+    - @chapters.each do |chapter|
+      %tr
+        %td= chapter.chapter_name
+        %td= chapter.subject.subject_name
+        %td= link_to 'Read this Chapter', chapter
+        - if current_user.role == 'admin'
+          %td= link_to 'Edit', edit_chapter_path(chapter)
+          %td= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+= link_to 'Create New Chapter', new_subject_chapter_path(@subject.id)

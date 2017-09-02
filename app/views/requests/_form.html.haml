@@ -1,0 +1,23 @@
+= simple_form_for @request, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :first_name
+  = f.error_span :first_name
+  = f.input :last_name
+  = f.error_span :last_name
+  = f.input :email
+  = f.error_span :email
+  = f.input :mobile
+  = f.error_span :mobile
+  = f.input :address_one
+  = f.error_span :address_one
+  = f.input :address_two
+  = f.error_span :address_two
+  = f.input :state
+  = f.error_span :state
+  = f.input :city
+  = f.error_span :city
+  = f.input :pin
+  = f.error_span :pin
+  = f.input :accept_flag
+  = f.error_span :accept_flag
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), requests_path, :class => 'btn btn-default'

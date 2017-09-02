@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NfbmOnlineStudyTool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'header' %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+      <div class="span3">
+      <h2>About This software</h2>
+      <p> This Software Made by the National federation of the blind maharashtra - pune region team.
+      </br>
+      Perpose:
+      <ul>
+      <li> Maintaining Student data and their levels </li>
+      <li> Conduct Online exams and tracking student indivisual progress </li>
+      </ul>
+      <br>
+      </p>
+    </div>
+      </hr>
+      <footer>
+        <p> &copy; National Federation Of The Blind  Maharashtra - Pune Region 2017. </br> Website design and developed by <a href="http://www.facebook.com/vishal.pawle.3"> Vishal H Pawle. </a> If you need any technical help while using this tool, kindly contact on +919637290294. </p.> </footer>
+        
+  </div>
+</div>
+
+</body>
+</html>

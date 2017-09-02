@@ -1,0 +1,88 @@
+I"Í(function() {
+  $(document).ready(function() {
+    var chk_five, chk_four, chk_one, chk_three, chk_two;
+    $("#vishal_question").attr('disabled', true);
+    chk_one = $("#question_options_attributes_0_option_right");
+    chk_two = $("#question_options_attributes_1_option_right");
+    chk_three = $("#question_options_attributes_2_option_right");
+    chk_four = $("#question_options_attributes_3_option_right");
+    chk_five = $("#question_options_attributes_4_option_right");
+    chk_one.change(function() {
+      if (chk_one.is(':checked')) {
+        $("#vishal_question").attr('disabled', false);
+        chk_two.attr('disabled', true);
+        chk_three.attr('disabled', true);
+        chk_four.attr('disabled', true);
+        return chk_five.attr('disabled', true);
+      } else {
+        $('#vishal_question').attr('disabled', true);
+        chk_two.attr('disabled', false);
+        chk_three.attr('disabled', false);
+        chk_four.attr('disabled', false);
+        return chk_five.attr('disabled', false);
+      }
+    });
+    chk_two.change(function() {
+      if (chk_two.is(':checked')) {
+        $('#vishal_question').attr('disabled', false);
+        chk_one.attr('disabled', true);
+        chk_three.attr('disabled', true);
+        chk_four.attr('disabled', true);
+        return chk_five.attr('disabled', true);
+      } else {
+        $('#vishal_question').attr('disabled', true);
+        chk_one.attr('disabled', false);
+        chk_three.attr('disabled', false);
+        chk_four.attr('disabled', false);
+        return chk_five.attr('disabled', false);
+      }
+    });
+    chk_three.change(function() {
+      if (chk_three.is(':checked')) {
+        $('#vishal_question').attr('disabled', false);
+        chk_one.attr('disabled', true);
+        chk_two.attr('disabled', true);
+        chk_four.attr('disabled', true);
+        return chk_five.attr('disabled', true);
+      } else {
+        $('#vishal_question').attr('disabled', true);
+        chk_one.attr('disabled', false);
+        chk_two.attr('disabled', false);
+        chk_four.attr('disabled', false);
+        return chk_five.attr('disabled', false);
+      }
+    });
+    chk_four.change(function() {
+      if (chk_four.is(':checked')) {
+        $('#vishal_question').attr('disabled', false);
+        chk_one.attr('disabled', true);
+        chk_two.attr('disabled', true);
+        chk_three.attr('disabled', true);
+        return chk_five.attr('disabled', true);
+      } else {
+        $('#vishal_question').attr('disabled', true);
+        chk_one.attr('disabled', false);
+        chk_two.attr('disabled', false);
+        chk_three.attr('disabled', false);
+        return chk_five.attr('disabled', false);
+      }
+    });
+    return chk_five.change(function() {
+      if (chk_five.is(':checked')) {
+        $('#vishal_question').attr('disabled', false);
+        chk_one.attr('disabled', true);
+        chk_two.attr('disabled', true);
+        chk_three.attr('disabled', true);
+        return chk_four.attr('disabled', true);
+      } else {
+        $('#vishal_question').attr('disabled', true);
+        chk_one.attr('disabled', false);
+        chk_two.attr('disabled', false);
+        chk_three.attr('disabled', false);
+        return chk_four.attr('disabled', false);
+      }
+    });
+  });
+
+}).call(this);
+:ET

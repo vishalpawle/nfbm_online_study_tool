@@ -1,0 +1,20 @@
+%h1 Instructions for exam:
+%ol
+  %li The paper is designed in #{@exam.subjects.size} subjects.
+  %ul
+    - @exam.subjects.each do |s|
+      %li= s.subject_name
+  %li All these subjects will carries few questions based on the marks.
+  %li Students will get time span of 40 minutes to solve the exam, extra 10 minutes will be given to recheck their paper.
+  %li Each question will comes under heading level 3 followed by several radio buttons. Student  needs to choose only one options to give correct answer. To check radio button, by pressing spacebar an answer can be given.
+  %li While writing the entire exam, students are not allow to use other keys on the keyboard, except "up arrow, down arrow and spacebar".
+  %li If student is observed pressing any keys except above mention keys on the keyboard, they will be rejected from course;.
+  %li If student have taken scribe for writing their exam, they should not ask their scribe to pick any answer.
+  %li  backpacks, bags, etc. must be placed as directed by NFBM team. Mobile phones, mp3 players, smartwatches and other electronic devices must be turned off.
+  %li If support material, other than that which is specifically permitted, is found at or by the desk, it may be treated as an attempt to cheat and relevant procedures for cheating will be followed.
+  %li The NFBM Admin will provide information about examination support materials that you are permitted to use during the examination. All materials  must be approved by the NFBM Admin before the exam.
+  %li You are required to comply with the directions given by the NFBM team at the examination venue during the examination.
+  %li If anything in the examination question paper is unclear, you can contact to NFBM Team. Such contact is facilitated by the supervisor - NFBM at the venue.
+  %li If you experience technical problems during this examination, you must immediately contact one of the supervisor. The supervisor will call for technical support. Failure to report such technical problems might be treated as cheating or an attempt to cheat.
+%br
+= button_to "Start My Exam", giveexam_path(@exam.id), :class => "button", :method => :get, :data => { :confirm => 'Do you wish to Start the Exam?' }

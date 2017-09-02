@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam_name: MyString
+  exam_date: 2017-08-17
+  exam_discription: MyText
+  exam_instructions: MyText
+  level_id: 
+
+two:
+  exam_name: MyString
+  exam_date: 2017-08-17
+  exam_discription: MyText
+  exam_instructions: MyText
+  level_id: 

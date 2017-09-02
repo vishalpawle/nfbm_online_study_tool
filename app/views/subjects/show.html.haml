@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Subject name:
+  = @subject.subject_name
+%p
+  %b Subject discription:
+  = @subject.subject_discription
+%p
+  %b Level:
+  = @subject.level.title
+
+\|
+= link_to 'Back', level_subjects_path(@subject.level.id)

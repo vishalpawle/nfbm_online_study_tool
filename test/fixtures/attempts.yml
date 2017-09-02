@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_marks: 1
+  require_marks: 1
+  attempted_date: 2017-08-19
+  student_id: 
+  paper_id: 
+
+two:
+  total_marks: 1
+  require_marks: 1
+  attempted_date: 2017-08-19
+  student_id: 
+  paper_id: 

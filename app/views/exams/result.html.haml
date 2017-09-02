@@ -1,0 +1,44 @@
+%h1 Result
+- if @result.result_status == "PASS"
+  %i Congratulations! you have successfully clear this exam!!!
+  %br
+  %h2 Result details:
+  %table.table
+    %thead
+      %tr
+        %th Student name
+        %th Total marks
+        %th Minimum require marks
+        %th Obtained Marks
+        %th Result Status
+    %tbody
+      %tr
+        %td= @result.attempt.student.first_name.capitalize + " " + @result.attempt.student.last_name.capitalize
+        %td= @result.total_marks
+        %td= @result.min_marks
+        %td= @result.get_marks
+        %td= @result.result_status.capitalize
+  %hr
+- elsif @result.result_status == "FAIL"
+  %i Sorry, you have not clear this exam :(
+  %br
+  %h2 Result details:
+  %table.table
+    %thead
+      %tr
+        %th Student name
+        %th Total marks
+        %th Minimum require marks
+        %th Obtained marks
+        %th Result status
+    %tbody
+      %tr
+        %td= @result.attempt.student.first_name.capitalize + " " + @result.attempt.student.last_name.capitalize
+        %td= @result.total_marks
+        %td= @result.min_marks
+        %td= @result.get_marks
+        %td= @result.result_status.capitalize
+  %i Please try again. All the best for your future.
+  %hr
+%br
+= link_to "Back to home", root_path

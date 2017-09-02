@@ -1,0 +1,24 @@
+%h1 Listing questions which you have created under #{@subject_name}
+
+%table
+  %thead
+    %tr
+      %th Question you have created
+      %th Catigory of the question
+      %th Subject
+      %th
+      %th
+      %th
+
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.assking_question
+        %td= question.type_of_question
+        %td= question.subject.subject_name
+        %td= link_to 'Show', question
+        %td= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Create Question', new_subject_question_path(@subject.id)

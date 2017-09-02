@@ -1,0 +1,18 @@
+%p#notice= notice
+%h2 Question you created
+%p
+  %b= @question.assking_question
+  %br
+  %b Cat of this question is:
+  %br
+  %b= @question.type_of_question
+%h2 Question discription:
+%p
+  %b= @question.question_discription
+%br
+%p
+  %b Subject:
+  = @question.subject.subject_name
+
+\|
+= link_to 'Back', subject_questions_path(@question.subject.id)

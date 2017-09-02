@@ -1,0 +1,13 @@
+%h1 Welcome to NFBM Pune online study tool.
+- if user_signed_in?
+  - if current_user.role == 'student' && current_user.student == nil
+    %b Dear user, You need to create your student profile on our system. Other vise, you will not able to access this tool.
+    = link_to "Create student profile", new_student_path
+  - if current_user.role == 'student' && current_user.student != nil && current_user.student.current_level == nil
+    %strong No level is assign to you by your admin. Please contact to your admin team for this issue. Otherwise you wwill not able to access this software.
+  - if current_user.role == 'teacher' && current_user.teacher == nil
+    %i Dear Sir / Madam, your nomination in this system fixed as a "teacher." However, it has been Observed that, you have not completed your registration levels. So, we recommend you to kindly complete your remaining registration levels.
+    = link_to "Click here to Complete your remaining registration levels", new_teacher_path
+- else
+  = link_to 'login', new_user_session_path
+

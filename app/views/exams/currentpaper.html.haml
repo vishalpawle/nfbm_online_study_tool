@@ -1,0 +1,4 @@
+%h1 Tell us your current paper:
+= simple_form_for currentpaper_path, method: :put do |f|
+  = select_tag "paper", options_for_select(@paper.collect{ |p| [p.paper_name, p.id]})
+  = submit_tag "Save"

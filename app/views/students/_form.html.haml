@@ -1,0 +1,49 @@
+= simple_form_for @student, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :first_name
+  = f.error_span :first_name
+  = f.input :last_name
+  = f.error_span :last_name
+  = f.input :mid_name
+  = f.error_span :mid_name
+  = f.input :gender, :collection => ['Male', 'Female', 'Other'], as: :radio_buttons
+  = f.error_span :gender
+  = f.input :date_of_birth, as: :string, input_html:  {type: :date, order:  [:day, :month, :year], "aria-required" => "true"}, :hint => "Date should be in DD/MM/YYYY format"
+  = f.error_span :date_of_birth
+  = f.input :mobile_number
+  = f.error_span :mobile_number
+  = f.input :email, :input_html => {:value => current_user.email}, :readonly => true
+  = f.error_span :email
+  = f.input :address_one
+  = f.error_span :address_one
+  = f.input :address_two
+  = f.error_span :address_two
+  = f.input :address_three
+  = f.error_span :address_three
+  = f.input :city
+  = f.error_span :city
+  = f.input :state
+  = f.error_span :state
+  = f.input :pin
+  = f.error_span :pin
+  = f.input :occupation, :collection => ['Employed', 'Self Employed', 'Unemployed'], as: :radio_buttons
+  = f.error_span :occupation
+  = f.input :qualification, :collection => ['SSC', 'HSC', 'Under Graduate', 'Graduate', 'Post Graduate', 'Other'], :prompt => "Please select your qualification"
+  = f.error_span :qualification
+  = f.input :have_you_completed_any_computer_cource, :collection => ['Yes', 'No'], as: :radio_buttons
+  = f.error_span :have_you_completed_any_computer_cource
+  = f.input :course_name
+  = f.error_span :course_name
+  = f.input :computer_literacy_level, :collection => ['Good', 'working knowledge / basic oparations', 'Advanced I.E MS Office / MS Access / Programming etc', 'Knowledge is require'], :prompt => "Please select one"
+  = f.error_span :computer_literacy_level
+  = f.input :percentages_of_blindness, :collection => ['40 %', 'More than 40%'], :prompt => "Please select one"
+  = f.error_span :percentages_of_blindness
+  = f.input :which_assistive_technology_do_you_use, :collection => ['JAWS (Job access with speech) for microsoft windows', 'NVDA (Non visual desktop access) for microsoft windows', 'SAFA (System For All) for microsoft windows', 'Talk Back for Android platform', 'Voiceover for IOS platform', 'Low vision devices (including Magnifires glasses / fonts)', 'Other'], :prompt => "Please select if any"
+  = f.error_span :which_assistive_technology_do_you_use
+  = f.input :do_you_have_membership_of_nfbmpune, :collection => ['Yes', 'No'], as: :radio_buttons
+  = f.error_span :do_you_have_membership_of_nfbmpune
+  = f.input :tirms, :label => "I know the all tirms and conditions before using this tool, and I do agree for the same"
+  = f.error_span :tirms
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.error_span :user_id
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), students_path, :class => 'btn btn-default'

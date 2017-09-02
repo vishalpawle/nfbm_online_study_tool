@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %h1 Chapter name:
+  = @chapter.chapter_name
+%p
+  %b Chapter:
+  = raw @chapter.chapter_discription
+
+- if current_user.role == 'admin'
+
+  = link_to 'Edit', edit_chapter_path(@chapter)
+\|
+= link_to 'Back', subject_chapters_path(@chapter.subject.id)

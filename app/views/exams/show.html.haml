@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p
+  %b Exam name:
+  = @exam.exam_name
+%p
+  %b Exam date:
+  = @exam.exam_date.strftime("%A, %B %d, %Y")
+%p
+  %b Exam discription:
+  = raw @exam.exam_discription
+%p
+  %b Level title:
+  = @exam.level.title
+
+\|
+= link_to 'Back', level_exams_path(@exam.level.id)

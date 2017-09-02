@@ -1,0 +1,16 @@
+= javascript_include_tag Ckeditor.cdn_url
+= simple_nested_form_for([@subject, @question]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :assking_question, as: :text, :label => "Your Question", :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini'}}
+    = f.input :type_of_question, :collection => ['Regular', 'MCQ'], as: :radio_buttons
+    = f.input :question_discription
+    - 5.times do
+      = f.simple_fields_for :options, Option.new do |option|
+        = option.error_notification
+        = option.input :option_name
+        = option.input :option_right
+
+  .form-actions
+    = f.button :submit, :id => 'vishal_question'
